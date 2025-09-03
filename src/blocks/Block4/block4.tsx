@@ -41,21 +41,21 @@ const block4 = () => {
 
                             {item.buttons?.map((btn, i) => (
                                 <div key={i} className="w-full flex justify-start">
-                                    <Button
+                                    <span
                                         onClick={() => {
                                             if (btn.actionType === "navigate" && btn.path) {
                                                 window.location.href = btn.path;
                                             }
                                         }}
-                                        className="text-[14px] leading-[28px] font-Archivo font-normal text-[#C2C2C2] w-[32%] text-left"
+                                        className="text-[14px] leading-[28px] font-Archivo font-normal text-[#C2C2C2] flex flex-row  items-center justify-center"
                                     >
                                         {btn.label}
                                         <Image
                                             src={ArrowRight}
                                             alt="arrow right"
-                                            className="w-[19px] h-[19px]"
+                                            className="w-[19px] h-[19px] justify-center"
                                         />
-                                    </Button>
+                                    </span>
                                 </div>
                             ))}
                         </div>
