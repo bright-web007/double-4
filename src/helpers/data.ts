@@ -139,3 +139,12 @@ export type Button = {
       img: img4,
     },
   ];
+
+  export const navLinks = [
+    { name: 'Home', link: '/' },
+    { name: 'Menu', link: '/menu' },
+    { name: 'Gallery', link: '/gallery' },
+    { name: 'Reward & Loyalty', link: '/reward' },
+    { name: 'Get a Gift Card', link: '/giftCard' },
+    { name: 'Contact-us', link: '/contact-us' },
+  ];

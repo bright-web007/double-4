@@ -164,6 +164,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify/react@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@iconify/react@npm:6.0.1"
+  dependencies:
+    "@iconify/types": "npm:^2.0.0"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10c0/196639e6970fb47df147b191386d095713d2604e5aadea6a35789482009e938e9ebdb90ad56aeed4263dac7ee5978404b11d7440a3bf9439d9a033e093274bdc
+  languageName: node
+  linkType: hard
+
+"@iconify/types@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@iconify/types@npm:2.0.0"
+  checksum: 10c0/65a3be43500c7ccacf360e136d00e1717f050b7b91da644e94370256ac66f582d59212bdb30d00788aab4fc078262e91c95b805d1808d654b72f6d2072a7e4b2
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.34.3":
   version: 0.34.3
   resolution: "@img/sharp-darwin-arm64@npm:0.34.3"
@@ -1616,6 +1634,7 @@ __metadata:
   resolution: "double-4@workspace:."
   dependencies:
     "@eslint/eslintrc": "npm:^3"
+    "@iconify/react": "npm:^6.0.1"
     "@radix-ui/react-slot": "npm:^1.2.3"
     "@tailwindcss/postcss": "npm:^4.1.12"
     "@tailwindcss/vite": "npm:^4.1.12"

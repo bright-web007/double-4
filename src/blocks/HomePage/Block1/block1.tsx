@@ -4,7 +4,7 @@ import homehero from '@/assets/background/homehero.png'
 
 const block1 = () => {
   return (
-    <div className="h-[100vh] overflow-hidden relative ">
+    <div className="h-[100vh] overflow-hidden relative mt-[-80px]">
     {/* Background container */}
     <div className="absolute inset-0 flex flex-col animate-slide-vertical">
       {/* Layer 1 */}
