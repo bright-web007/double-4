@@ -17,7 +17,7 @@ const block7 = () => {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
-                    src={coffeecup} // replace with your coffee background
+                    src={coffeecup}
                     alt="Coffee background"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
