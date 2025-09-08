@@ -35,7 +35,7 @@ const block5 = () => {
 
             {/* Subtitle */}
             <p
-              className={`text-[36px] font-light font-Archivo leading-[120%] sm:text-[55px] md:text-[36px] lg:text-[43px] xl:text-[36px] 2xl:text-[43px]  ${
+              className={`text-[36px] font-light font-Archivo uppercase leading-[120%] sm:text-[55px] md:text-[36px] lg:text-[43px] xl:text-[42px] 2xl:text-[43px]  ${
                 index === 0 ? "text-[#FFFFFF]" : "text-[#3A2B28]"
               }`}
             >
@@ -44,7 +44,7 @@ const block5 = () => {
 
             {/* Description */}
             <p
-              className={`text-[16px] font-normal font-CreatoDisplay leading-[24px] sm:text-[23px] sm:leading-[32px] md:text-[14px] md:leading-[24px] lg:text-[23px] lg:leading-[32px] xl:text-[14px] xl:leading-[24px] 2xl:text-[23px] 2xl:leading-[32px] ${
+              className={`text-[16px] font-normal font-CreatoDisplay leading-[24px] sm:text-[23px] sm:leading-[32px] md:text-[14px] md:leading-[24px] lg:text-[23px] lg:leading-[32px] xl:text-[14px] xl:leading-[24px] xl:font-light 2xl:text-[23px] 2xl:leading-[32px] ${
                 index === 0 ? "text-[#DED1CE]" : "text-[#3A2B28]"
               }`}
             >
@@ -57,8 +57,8 @@ const block5 = () => {
             <Image
               src={item.img}
               alt={item.title}
-              height={204.67}
-              width={307}
+              height={190}
+              width={290}
               className="object-contain w-full"
             />
 
@@ -71,7 +71,7 @@ const block5 = () => {
                     window.location.href = btn.path;
                   }
                 }}
-                className=" bg-[#7AD3FB] text-[16px] leading-[100%] text-black px-6 py-2 w-full sm:h-[70px] sm:text-[24px] md:text-[16px] md:h-[50px] lg:h-[70px] lg:text-[24px] xl:text-[16px] xl:h-[50px] 2xl:h-[70px] 2xl:text-[24px] "
+                className="bg-[#7AD3FB] w-full font-Archivo leading-[100%] h-[50px] text-[16px] sm:text-[20px] sm:h-[65px] md:text-[16px] md:h-[50px] lg:text-[19px] lg:h-[60px] xl:text-[16px] xl:h-[50px]"
               >
                 {btn.label}
               </Button>

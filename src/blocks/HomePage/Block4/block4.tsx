@@ -34,7 +34,7 @@ const block4 = () => {
                             <h3 className="text-[20px] leading-[28px] font-Archivo font-normal text-[#FFFFFF] sm:text-[23px] sm:leading-[31px] lg:text-[30px] lg:leading-[38px] xl:text-[20px] xl:leading-[28px] 2xl:text-[22px] 2xl:leading-[30px]">
                                 {item.title}
                             </h3>
-                            <p className="text-[14px] leading-[20px] font-CreatoDisplay font-normal text-[#C2C2C2] sm:text-[22px] sm:leading-[30px] md:text-[20px] md:leading-[26px] lg:text-[28px] lg:leading-[34px] xl:text-[14px] xl:leading-[20px] 2xl:text-[18px] 2xl:leading-[24px]">
+                            <p className="text-[14px] leading-[20px] font-CreatoDisplay font-normal text-[#C2C2C2] sm:text-[22px] sm:leading-[30px] md:text-[20px] md:leading-[26px] lg:text-[28px] lg:leading-[38px] xl:text-[17px] xl:leading-[23px] 2xl:text-[18px] 2xl:leading-[24px]">
                                 {item.desc}
                             </p>
 

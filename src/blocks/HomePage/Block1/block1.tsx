@@ -9,7 +9,7 @@ const block1 = () => {
       {/* Layer 1 */}
       <div
         className="h-[100%] w-full bg-cover bg-center bg-no-repeat relative animate-scroll-right xl:h-[100%]"
-        style={{ backgroundImage: `url(${"https://double-4.s3.eu-north-1.amazonaws.com/homehero.webp"})` }}
+        style={{ backgroundImage: `url(${"https://double-4.s3.eu-north-1.amazonaws.com/Updated.webp"})` }}
       >
         {/* Overlay (optional tint, not blur) */}
         <div className="absolute inset-0  bg-black/45" />
@@ -18,7 +18,7 @@ const block1 = () => {
       {/* Layer 2 */}
       <div
         className="h-[100%] w-full bg-cover bg-center bg-no-repeat relative animate-scroll-left xl:h-[100%]"
-        style={{ backgroundImage: `url(${"https://double-4.s3.eu-north-1.amazonaws.com/homehero.webp"})` }}
+        style={{ backgroundImage: `url(${"https://double-4.s3.eu-north-1.amazonaws.com/Updated.webp"})` }}
       >
         <div className="absolute inset-0  bg-black/45" />
       </div>
@@ -26,7 +26,7 @@ const block1 = () => {
       {/* Layer 3 */}
       <div
         className="h-[100%] w-full bg-cover bg-center bg-no-repeat relative animate-scroll-right xl:h-[100%]"
-        style={{ backgroundImage: `url(${"https://double-4.s3.eu-north-1.amazonaws.com/homehero.webp"})` }}
+        style={{ backgroundImage: `url(${"https://double-4.s3.eu-north-1.amazonaws.com/Updated.webp"})` }}
       >
         <div className="absolute inset-0  bg-black/45" />
       </div>

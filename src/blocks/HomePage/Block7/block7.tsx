@@ -38,7 +38,7 @@ const block7 = () => {
                     <h2 className="text-[36px] leading-[120%] font-light font-Archivo text-[#FFFFFF] sm:text-[40px] lg:text-[55px] xl:text-[40px] ">OPENING HOURS</h2>
 
                     {/* Subtitle */}
-                    <p className="text-[#DED1CE] text-[16px] leading-[24px] font-CreatoDisplay font-normal sm:text-[24px] sm:leading-[32px] md:text-[16px] md:leading-[24px] lg:text-[20px] lg:leading-[32px] xl:text-[23px] xl:leading-[24px]">
+                    <p className="text-[#DED1CE] text-[16px] leading-[24px] font-CreatoDisplay font-normal sm:text-[24px] sm:leading-[32px] md:text-[16px] md:leading-[24px] lg:text-[20px] lg:leading-[32px] xl:text-[23px] xl:leading-[28px]">
                         Drop by for your favorite brews and bites. We’re here to serve you fresh coffee and a warm
                         atmosphere every day of the week
                     </p>
