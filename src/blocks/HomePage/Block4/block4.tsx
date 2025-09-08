@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
 import Image from 'next/image'
-import ArrowRight from '@/assets/Arrow-right.png'
 import { MenuLayer } from '@/helpers/data'
 import { Button } from '@/components/ui/button';
 
@@ -26,14 +25,16 @@ const block4 = () => {
                         <Image
                             src={item.img}
                             alt={item.title}
-                            className="w-full"
+                            height={286}
+                            width={398}
+                            className="w-full h-[286px]"
                         />
 
-                        <div className="bg-[#3A2B28] pb-[20px] pt-[16px] pl-[12px] pr-[12px] flex flex-col gap-[2.8px] sm:gap-[4px] md:gap-[8px] lg:gap-[12px] xl:gap-[8px]">
+                        <div className="bg-[#3A2B28] pb-[20px] pt-[16px] pl-[12px] pr-[12px] flex flex-col gap-[2.8px] sm:gap-[4px] md:gap-[8px] lg:gap-[12px] xl:gap-[8px] xl:border-r-[1px] border-[#686868]">
                             <h3 className="text-[20px] leading-[28px] font-Archivo font-normal text-[#FFFFFF] sm:text-[23px] sm:leading-[31px] lg:text-[30px] lg:leading-[38px] xl:text-[20px] xl:leading-[28px] 2xl:text-[22px] 2xl:leading-[30px]">
                                 {item.title}
                             </h3>
-                            <p className="text-[14px] leading-[20px] font-CreatoDisplay font-normal text-[#C2C2C2] sm:text-[22px] sm:leading-[30px] md:text-[20px] md:leading-[26px] lg:text-[28px] lg:leading-[34px] xl:text-[14px] xl:leading-[20px] 2xl:text-[16px] 2xl:leading-[22px]">
+                            <p className="text-[14px] leading-[20px] font-CreatoDisplay font-normal text-[#C2C2C2] sm:text-[22px] sm:leading-[30px] md:text-[20px] md:leading-[26px] lg:text-[28px] lg:leading-[38px] xl:text-[15px] xl:leading-[23px] 2xl:text-[18px] 2xl:leading-[24px]">
                                 {item.desc}
                             </p>
 
@@ -49,8 +50,10 @@ const block4 = () => {
                                     >
                                         {btn.label}
                                         <Image
-                                            src={ArrowRight}
+                                            src="https://double-4.s3.eu-north-1.amazonaws.com/Arrow-right.webp"
                                             alt="arrow right"
+                                            width={19}
+                                            height={19}
                                             className="w-[19px] h-[19px] justify-center sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px] lg:h-[28px] lg:w-[28px] xl:h-[19px] xl:w-[19px]"
                                         />
                                     </span>

@@ -20,7 +20,7 @@ const block2 = () => {
                     <h2 className="text-[20px] font-Archivo leading-[30px] font-light text-[#3A2B28] sm:text-[26px] sm:leading-[30px] lg:text-[32px] lg:leading-[35px] xl:text-[24px] xl:leading-[30px]">
                         {item.title}
                     </h2>
-                    <p className="text-[16px] font-CreatoDisplay leading-[22px] font-light text-[#3B2D2A] sm:text-[20px] sm:leading-[30px] lg:text-[26px] lg:leading-[30px] xl:text-[16px] xl:leading-[22px]">
+                    <p className="text-[16px] font-Archivo leading-[22px] font-light text-[#3B2D2A] sm:text-[20px] sm:leading-[30px] lg:text-[26px] lg:leading-[30px] xl:text-[16px] xl:leading-[22px]">
                         {item.desc}
                     </p>
 
