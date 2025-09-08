@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 
 const block6 = () => {
     return (
-        <div className="flex flex-col items-center gap-[67px] px-[16px] pt-[40px] pb-[80px] md:px-[120px] md:py-[100px] xl:p-[114px] 2xl:p-[90px]">
+        <div className="flex flex-col bg-white items-center gap-[67px] px-[16px] pt-[40px] pb-[80px] md:px-[120px] md:py-[100px] xl:p-[114px] 2xl:p-[90px]">
             {/* Title */}
             <div className="text-center flex flex-col gap-[20px] justify-center items-center ">
                 <Button className="text-[12px] leading-[100%] font-Archivo font-semibold bg-[#7AD3FB33] text-[#3A2B28] tracking-[2.8%] sm:text-[14px] md:text-[12px] lg:text-[20px] xl:text-[14px]">GALLERY</Button>
