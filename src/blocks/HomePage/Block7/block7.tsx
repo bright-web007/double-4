@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-import coffeecup from "@/assets/coffecup.jpg"
 
 const block7 = () => {
     const hours = [
@@ -17,8 +16,9 @@ const block7 = () => {
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
-                    src={coffeecup}
+                    src="https://double-4.s3.eu-north-1.amazonaws.com/coffecup.webp"
                     alt="Coffee background"
+                    fill
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
                 />
             </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import logo from '@/assets/icons/double4-icon.png';
 import { Icon } from '@iconify/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -16,7 +15,7 @@ const Navbar = () => {
       <div className="font-monserrat bg-transparent z-40 flex justify-between pt-[12px] px-[24px] md:px-[40px] xl:px-[100px]">
         <div className="pt-[10px]">
           <Image
-            src={logo}
+            src="https://double-4.s3.eu-north-1.amazonaws.com/double4-icon.webp"
             alt="Double 4 Logo"
             width={38.81}
             height={55.52}

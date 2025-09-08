@@ -3,8 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { RewardLayer } from "@/helpers/data";
 import { Button } from "@/components/ui/button";
-import CoffeeBean1 from "@/assets/coffeebeans.png";
-import CoffeeBean2 from "@/assets/coffeebeans2.png";
 
 const block5 = () => {
   return (
@@ -17,8 +15,10 @@ const block5 = () => {
         >
           {/* Decorative Image - Different for each container */}
           <Image
-            src={index === 0 ? CoffeeBean1 : CoffeeBean2}
+            src={index === 0 ? "https://double-4.s3.eu-north-1.amazonaws.com/coffeebeans.webp" : "https://double-4.s3.eu-north-1.amazonaws.com/coffeebeans2.webp"}
             alt="Decorative bean"
+            width={index === 0 ? 350 : 100}
+            height={index === 0 ? 350 : 100}
             className={`absolute  ${index === 0 ? "left-[245px] top-[-240.4px] h-[350px] w-[350px] sm:left-[420px] sm:top-[-225.4px] md:left-[72%] md:top-[-225.4px] lg:left-[78%] xl:left-[70%]" 
               : "left-[-58px] top-[-50.4px] h-[100px] w-[100px] md:left-[-40px] md:top-[-40.4px]"}`}
           />
@@ -57,6 +57,8 @@ const block5 = () => {
             <Image
               src={item.img}
               alt={item.title}
+              height={204.67}
+              width={307}
               className="object-contain w-full"
             />
 

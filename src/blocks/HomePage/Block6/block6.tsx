@@ -22,6 +22,8 @@ const block6 = () => {
                         <Image
                             src={item.img}
                             alt={`Food ${index + 1}`}
+                            width={400}
+                            height={258}
                             className="object-cover w-full h-[197px] sm:h-[290px] md:h-[258px]"
                         />
                     </div>

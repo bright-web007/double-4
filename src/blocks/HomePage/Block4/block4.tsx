@@ -1,7 +1,6 @@
 'use client';
 import React from 'react'
 import Image from 'next/image'
-import ArrowRight from '@/assets/Arrow-right.png'
 import { MenuLayer } from '@/helpers/data'
 import { Button } from '@/components/ui/button';
 
@@ -26,6 +25,8 @@ const block4 = () => {
                         <Image
                             src={item.img}
                             alt={item.title}
+                            height={286}
+                            width={398}
                             className="w-full"
                         />
 
@@ -49,8 +50,10 @@ const block4 = () => {
                                     >
                                         {btn.label}
                                         <Image
-                                            src={ArrowRight}
+                                            src="https://double-4.s3.eu-north-1.amazonaws.com/Arrow-right.webp"
                                             alt="arrow right"
+                                            width={19}
+                                            height={19}
                                             className="w-[19px] h-[19px] justify-center sm:h-[22px] sm:w-[22px] md:h-[25px] md:w-[25px] lg:h-[28px] lg:w-[28px] xl:h-[19px] xl:w-[19px]"
                                         />
                                     </span>
