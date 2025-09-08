@@ -54,7 +54,7 @@ const Navbar = () => {
               Get a Gift Card
             </p>
             <p onClick={() => router.push('/contact-us')}
-              className="bg-[#7AD3FB] px-2 py-2 rounded cursor-pointer text-[black]">
+              className="bg-[#7AD3FB] px-[20px] py-[12px] rounded cursor-pointer text-[#292C34]">
               Contact us
             </p>
           </div>

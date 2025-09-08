@@ -27,14 +27,14 @@ const block4 = () => {
                             alt={item.title}
                             height={286}
                             width={398}
-                            className="w-full"
+                            className="w-full h-[286px]"
                         />
 
-                        <div className="bg-[#3A2B28] pb-[20px] pt-[16px] pl-[12px] pr-[12px] flex flex-col gap-[2.8px] sm:gap-[4px] md:gap-[8px] lg:gap-[12px] xl:gap-[8px]">
+                        <div className="bg-[#3A2B28] pb-[20px] pt-[16px] pl-[12px] pr-[12px] flex flex-col gap-[2.8px] sm:gap-[4px] md:gap-[8px] lg:gap-[12px] xl:gap-[8px] xl:border-r-[1px] border-[#686868]">
                             <h3 className="text-[20px] leading-[28px] font-Archivo font-normal text-[#FFFFFF] sm:text-[23px] sm:leading-[31px] lg:text-[30px] lg:leading-[38px] xl:text-[20px] xl:leading-[28px] 2xl:text-[22px] 2xl:leading-[30px]">
                                 {item.title}
                             </h3>
-                            <p className="text-[14px] leading-[20px] font-CreatoDisplay font-normal text-[#C2C2C2] sm:text-[22px] sm:leading-[30px] md:text-[20px] md:leading-[26px] lg:text-[28px] lg:leading-[38px] xl:text-[17px] xl:leading-[23px] 2xl:text-[18px] 2xl:leading-[24px]">
+                            <p className="text-[14px] leading-[20px] font-CreatoDisplay font-normal text-[#C2C2C2] sm:text-[22px] sm:leading-[30px] md:text-[20px] md:leading-[26px] lg:text-[28px] lg:leading-[38px] xl:text-[15px] xl:leading-[23px] 2xl:text-[18px] 2xl:leading-[24px]">
                                 {item.desc}
                             </p>
 

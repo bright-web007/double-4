@@ -35,7 +35,7 @@ export type Button = {
   };
   export const MenuLayer: Item[] = [
     {
-      img: "https://double-4.s3.eu-north-1.amazonaws.com/Breakfast1.webp",
+      img: "https://double-4.s3.eu-north-1.amazonaws.com/Breakfast.webp",
       title: 'Breakfast Menu',
       desc: 'Start your day the right way with our fresh breakfast offerings.',
       buttons: [
