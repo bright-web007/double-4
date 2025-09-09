@@ -30,8 +30,11 @@ const Navbar = () => {
             className="group flex items-center h-full cursor-pointer md:hidden"
             onClick={() => setIsOpen(true)}
           >
-            <Icon
-              icon="line-md:menu"
+            <Image
+              src="https://double-4.s3.eu-north-1.amazonaws.com/menu.webp"
+              alt="menu logo"
+              width={38.869}
+              height={43.442}
               className="text-white w-[38.869px] h-[43.442px] md:w-7 md:h-7 cursor-pointer group-hover:hidden"
             />
           </div>
