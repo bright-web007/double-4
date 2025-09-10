@@ -41,19 +41,19 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center justify-center font-Archivo text-white gap-[24px] text-[16px] leading-[120%] font-medium">
-            <p onClick={() => router.push('/')} className="cursor-pointer">
+            <p onClick={() => router.push('/')} className="cursor-pointer hover:text-[#7AD3FB]">
               Home
             </p>
-            <p onClick={() => router.push('/menu')} className="cursor-pointer">
+            <p onClick={() => router.push('/menu')} className="cursor-pointer hover:text-[#7AD3FB]">
               Menu
             </p>
-            <p onClick={() => router.push('/Gallery')} className="cursor-pointer">
+            <p onClick={() => router.push('/gallery')} className="cursor-pointer hover:text-[#7AD3FB]">
               Gallery
             </p>
-            <p onClick={() => router.push('/reward')} className="cursor-pointer">
+            <p onClick={() => router.push('/reward')} className="cursor-pointer hover:text-[#7AD3FB]">
               Reward & Loyalty
             </p>
-            <p onClick={() => router.push('/giftCard')} className="cursor-pointer">
+            <p onClick={() => router.push('/giftCard')} className="cursor-pointer hover:text-[#7AD3FB]">
               Get a Gift Card
             </p>
             <p onClick={() => router.push('/contact-us')}

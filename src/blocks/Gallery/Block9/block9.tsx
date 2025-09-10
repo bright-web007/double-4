@@ -1,8 +1,13 @@
 'use client'
 import Masonry from 'react-masonry-css';
 
+
+interface GalleryImage {
+  src: string;
+  baseH: number;
+}
 export default function Gallery() {
-  const files = [
+  const files: string[] = [
     "Break1.webp",
     "Break2.webp",
     "Break3.webp",
@@ -17,7 +22,7 @@ export default function Gallery() {
     "Break12.webp",
   ];
 
-  const images = files.map((file) => ({
+  const images: GalleryImage[] = files.map((file) => ({
     src: `https://double-4.s3.eu-north-1.amazonaws.com/${file}`,
     baseH:
       file === 'Break2.webp' ||
