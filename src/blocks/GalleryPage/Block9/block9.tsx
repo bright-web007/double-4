@@ -86,12 +86,18 @@ export default function Gallery() {
           const xlClass = xlHeightClass(h);
 
           return (
-            <Image
+            <div
               key={i}
-              src={img.src}
-              alt=""
-              className={`w-full object-cover ${baseClass} ${mdClass} ${xlClass} transform transition-transform duration-300 ease-in-out hover:scale-105`}
-            />
+              className={`relative w-full ${baseClass} ${mdClass} ${xlClass}`}
+            >
+              <Image
+                key={i}
+                src={img.src}
+                fill
+                alt=""
+                className={`w-full object-cover ${baseClass} ${mdClass} ${xlClass} transform transition-transform duration-300 ease-in-out hover:scale-105`}
+              />
+            </div>
           );
         })}
       </Masonry>
