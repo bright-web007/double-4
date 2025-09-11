@@ -26,7 +26,7 @@ const block8 = () => {
                             Gallery
                         </span>
 
-                        <span className="text-[18px] leading-[100%] font-medium font-CreatoDisplay text-[#FFFFFF] sm:text-[32px] md:text-[20px] lg:text-[30px] xl:text-[18px]">
+                        <span className="text-[18px] leading-[100%] font-normal font-CreatoDisplay text-[#FFFFFF] sm:text-[32px] md:text-[20px] lg:text-[30px] xl:text-[18px] xl:leading-[150%]">
                             Discover the Double Four experience in pictures. Every image tells a story of flavor, warmth, and connection.
                         </span>
                     </h1>
