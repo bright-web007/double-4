@@ -44,11 +44,11 @@ const Footer = () => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="Your Email Here"
-            className="text-[14px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] px-[16px] py-[12px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400 sm:text-[18px] sm:px-[16px] sm:py-[20px] md:px-[16px] md:py-[12px] lg:px-[16px] lg:py-[20px] xl:px-[16px] xl:py-[12px] 2xl:px-[16px] 2xl:py-[20px]"
+            className="text-[14px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400 sm:text-[18px] sm:px-[16px] sm:py-[20px] md:px-[16px] md:py-[12px] lg:px-[16px] lg:py-[20px] xl:px-[16px] xl:py-[12px] 2xl:px-[16px] 2xl:py-[20px] h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           />
           <button
             onClick={handleClick}
-            className="bg-[#7AD3FB] w-full text-[#3A2B28] text-[16px] leading-[21px] font-CreatoDisplay font-normal px-[24px] py-[12px] rounded-[4px] hover:bg-blue-600 transition sm:text-[18px] sm:py-[20px] md:px-[16px] md:py-[12px] lg:px-[16px] lg:py-[20px] xl:px-[16px] xl:py-[12px] 2xl:px-[16px] 2xl:py-[20px]"
+            className="bg-[#7AD3FB] w-full text-[#3A2B28] text-[16px] leading-[21px] font-CreatoDisplay font-normal rounded-[4px] hover:bg-blue-600 transition sm:text-[18px]  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           >
             Join
           </button>
