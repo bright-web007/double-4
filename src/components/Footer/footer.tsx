@@ -36,7 +36,7 @@ const Footer = () => {
       <hr className="border-[#564542] h-[3px]" />
 
       <div className="flex flex-col gap-[24px] w-full xl:w-[489px]">
-        <p className="text-[16px] font-CreatoDisplay text-[#DED1CE] leading-[21px] font-normal sm:text-[24px] sm:leading-[28px] md:text-[15px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[16px] xl:leading-[21px] ">
+        <p className="text-[16px] font-CreatoDisplay text-[#DED1CE] leading-[21px] font-normal sm:text-[24px] sm:leading-[28px] md:text-[15px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[18px] xl:leading-[21px] ">
           Subscribe to our newsletter for the latest updates on features and releases.
         </p>
 
@@ -46,7 +46,7 @@ const Footer = () => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="Your Email Here"
-            className="text-[14px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
+            className="text-[14px] p-[12px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           />
           <button
             onClick={handleClick}
