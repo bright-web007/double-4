@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { Icon } from '@iconify/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import NavigationModal from '@/components/Navbar/NavigationModal';
