@@ -26,7 +26,7 @@ const block5 = () => {
           <div className="flex flex-col gap-[16px]">
             {/* Title */}
             <h2
-              className={`text-[12px] font-semibold font-Archivo leading-[100%] tracking-[2,8%] sm:text-[16px] md:text-[14px] lg:text-[16px] xl:text-[14px] 2xl:text-[16px] ${
+              className={`text-[12px] font-semibold font-Archivo uppercase leading-[100%] tracking-[2,8%] sm:text-[16px] md:text-[14px] lg:text-[16px] xl:text-[14px] 2xl:text-[16px] ${
                 index === 0 ? "text-[#7AD3FB]" : "text-[#3A2B28]"
               }`}
             >
