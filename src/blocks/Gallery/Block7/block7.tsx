@@ -1,12 +1,8 @@
 import React from 'react'
 import Image from "next/image";
 
-type OpeningHour = {
-    day: string;
-    time: string;
-  };
 const block7 = () => {
-    const hours: OpeningHour[] = [
+    const hours = [
         { day: "Monday", time: "CLOSED" },
         { day: "Tuesday", time: "11AM - 9PM" },
         { day: "Wednesday", time: "11AM - 9PM" },

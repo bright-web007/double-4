@@ -44,7 +44,7 @@ const block1 = () => {
         </p>
       </div>
       <div className="w-full xl:px-[29%] 2xl:px-[34%]">
-      <Button className="text-[16px] h-[50px] font-CreatoDisplay font-normal bg-[#7AD3FB] w-full rounded-md sm:h-[70px] sm:text-[30px] lg:h-[80px] xl:h-[50px] xl:text-[16px]">
+      <Button className="text-[16px] h-[50px] font-Archivo font-normal bg-[#7AD3FB] w-full rounded-md sm:h-[70px] sm:text-[30px] lg:h-[80px] xl:h-[50px] xl:text-[16px]">
         View Menu
       </Button>
       </div>
