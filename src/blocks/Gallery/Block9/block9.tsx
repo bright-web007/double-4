@@ -1,5 +1,6 @@
 'use client'
 import Masonry from 'react-masonry-css';
+import Image from 'next/image'
 
 
 interface GalleryImage {
@@ -85,7 +86,7 @@ export default function Gallery() {
           const xlClass = xlHeightClass(h);
 
           return (
-            <img
+            <Image
               key={i}
               src={img.src}
               alt=""

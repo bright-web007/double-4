@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import { navLinks } from '@/helpers/data';
-import { useRouter } from 'next/navigation';
 
 const Footer = () => {
-  const router = useRouter();
   const [value, setValue] = useState('');
 
   const handleClick = () => {
