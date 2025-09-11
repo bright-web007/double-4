@@ -2,11 +2,11 @@
 import Masonry from 'react-masonry-css';
 import Image from 'next/image'
 
-
 interface GalleryImage {
   src: string;
   baseH: number;
 }
+
 export default function Gallery() {
   const files: string[] = [
     "Break1.webp",
@@ -27,35 +27,33 @@ export default function Gallery() {
     src: `https://double-4.s3.eu-north-1.amazonaws.com/${file}`,
     baseH:
       file === 'Break2.webp' ||
-        file === 'Break3.webp' ||
-        file === 'Break6.webp' ||
-        file === 'Break7.webp' ||
-        file === 'Break10.webp' ||
-        file === 'Break11.webp'
+      file === 'Break3.webp' ||
+      file === 'Break6.webp' ||
+      file === 'Break7.webp' ||
+      file === 'Break10.webp' ||
+      file === 'Break11.webp'
         ? 200
         : 236,
   }));
 
   const breakpointColumnsObj = {
-    default: 3, // >= 1280px -> 3 columns
-    1279: 2,    // < 1280px -> 2 columns
+    default: 3,
+    1279: 2,
   };
 
-  // helper for base heights
+  // helpers for heights
   const baseHeightClass = (h: number) => {
     if (h === 200) return 'h-[200px]';
     if (h === 236) return 'h-[236px]';
     return 'h-auto';
   };
 
-  // helper for md heights
   const mdHeightClass = (h: number) => {
     if (h === 416) return 'md:h-[416px]';
     if (h === 534) return 'md:h-[534px]';
     return '';
   };
 
-  // helper for xl heights
   const xlHeightClass = (h: number) => {
     if (h === 416) return 'xl:h-[416px]';
     if (h === 534) return 'xl:h-[534px]';
@@ -73,7 +71,6 @@ export default function Gallery() {
           const col = i % 3;
           const row = Math.floor(i / 3);
 
-          // alternating pattern for md and xl
           let h: number;
           if (row % 2 === 0) {
             h = col === 1 ? 416 : 534;
@@ -88,14 +85,13 @@ export default function Gallery() {
           return (
             <div
               key={i}
-              className={`relative w-full ${baseClass} ${mdClass} ${xlClass}`}
+              className={`relative w-full ${baseClass} ${mdClass} ${xlClass} overflow-hidden`}
             >
               <Image
-                key={i}
                 src={img.src}
-                fill
                 alt=""
-                className={`w-full object-cover ${baseClass} ${mdClass} ${xlClass} transform transition-transform duration-300 ease-in-out hover:scale-105`}
+                fill
+                className={`object-cover transform transition-transform duration-300 ease-in-out hover:scale-110`}
               />
             </div>
           );
