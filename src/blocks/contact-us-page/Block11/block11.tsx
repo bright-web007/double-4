@@ -1,62 +1,27 @@
 "use client";
-import { useState } from "react";
 import React from "react";
 import { Icon } from "@iconify/react";
+import { useForm } from "react-hook-form";
+
+type FormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+  terms: boolean;
+};
 
 const Block11 = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-    terms: false,
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
 
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value, type } = e.target;
-  
-    // Narrowing so TS knows when "checked" is valid
-    if (type === "checkbox") {
-      const { checked } = e.target as HTMLInputElement;
-      setFormData({
-        ...formData,
-        [name]: checked,
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
-  
-    if (errors[name]) {
-      setErrors({ ...errors, [name]: "" });
-    }
-  };
-  
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const newErrors: { [key: string]: string } = {};
-    Object.entries(formData).forEach(([key, value]) => {
-      if ((typeof value === "string" && !value.trim()) || value === false) {
-        newErrors[key] = "This field is required";
-      }
-    });
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
-    console.log("Form submitted:", formData);
+  const onSubmit = (data: FormData) => {
+    console.log("Form submitted:", data);
   };
 
   return (
@@ -125,7 +90,7 @@ const Block11 = () => {
       {/* Right Section - Form */}
       <div className="w-full">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-[24px] border border-[#F9FAFB] bg-[#F8F8F8A3] p-[24px]"
         >
           <div className="flex flex-col gap-[24px] md:grid md:grid-cols-2">
@@ -136,14 +101,12 @@ const Block11 = () => {
               </label>
               <input
                 type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
                 placeholder="Enter first name"
+                {...register("firstName", { required: "This field is required" })}
                 className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px] lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.firstName && (
-                <span className="text-red-500 text-sm">{errors.firstName}</span>
+                <span className="text-red-500 text-sm">{errors.firstName.message}</span>
               )}
             </div>
 
@@ -154,14 +117,12 @@ const Block11 = () => {
               </label>
               <input
                 type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
                 placeholder="Last name"
+                {...register("lastName", { required: "This field is required" })}
                 className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.lastName && (
-                <span className="text-red-500 text-sm">{errors.lastName}</span>
+                <span className="text-red-500 text-sm">{errors.lastName.message}</span>
               )}
             </div>
 
@@ -172,14 +133,12 @@ const Block11 = () => {
               </label>
               <input
                 type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
                 placeholder="Enter email address"
+                {...register("email", { required: "This field is required" })}
                 className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.email && (
-                <span className="text-red-500 text-sm">{errors.email}</span>
+                <span className="text-red-500 text-sm">{errors.email.message}</span>
               )}
             </div>
 
@@ -190,14 +149,12 @@ const Block11 = () => {
               </label>
               <input
                 type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
                 placeholder="Enter phone number"
+                {...register("phone", { required: "This field is required" })}
                 className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.phone && (
-                <span className="text-red-500 text-sm">{errors.phone}</span>
+                <span className="text-red-500 text-sm">{errors.phone.message}</span>
               )}
             </div>
           </div>
@@ -209,14 +166,12 @@ const Block11 = () => {
             </label>
             <input
               type="text"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
               placeholder="What’s this about?"
+              {...register("subject", { required: "This field is required" })}
               className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
             />
             {errors.subject && (
-              <span className="text-red-500 text-sm">{errors.subject}</span>
+              <span className="text-red-500 text-sm">{errors.subject.message}</span>
             )}
           </div>
 
@@ -226,15 +181,13 @@ const Block11 = () => {
               Message
             </label>
             <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
               placeholder="Tell us how we can help"
               rows={4}
+              {...register("message", { required: "This field is required" })}
               className="w-full h-[180px]  border border-[#D2D2D2] text-[#D2D2D2]  p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none resize-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px] md:h-[180px] xl:h-[209px]"
             />
             {errors.message && (
-              <span className="text-red-500 text-sm">{errors.message}</span>
+              <span className="text-red-500 text-sm">{errors.message.message}</span>
             )}
           </div>
 
@@ -242,15 +195,13 @@ const Block11 = () => {
           <label className="flex items-center gap-2 text-[16px] font-CreatoDisplay leading-[21px] font-normal text-[#3A2B28] sm:text-[20px] sm:leading-[31px] md:text-[16px] md:leading-[21px] lg:text-[25px] lg:leading-[31px] xl:text-[16px] xl:leading-[21px]">
             <input
               type="checkbox"
-              name="terms"
-              checked={formData.terms}
-              onChange={handleChange}
+              {...register("terms", { required: true })}
               className="h-4 w-4 sm:h-6 sm:w-6"
             />
             I accept the Terms
           </label>
           {errors.terms && (
-            <span className="text-red-500 text-sm">{errors.terms}</span>
+            <span className="text-red-500 text-sm">You must accept the terms</span>
           )}
 
           {/* Submit Button */}
