@@ -49,12 +49,6 @@ const Navbar = () => {
             <p onClick={() => router.push('/gallery')} className="cursor-pointer hover:text-[#7AD3FB]">
               Gallery
             </p>
-            <p onClick={() => router.push('/reward')} className="cursor-pointer hover:text-[#7AD3FB]">
-              Reward & Loyalty
-            </p>
-            <p onClick={() => router.push('/giftCard')} className="cursor-pointer hover:text-[#7AD3FB]">
-              Get a Gift Card
-            </p>
             <p onClick={() => router.push('/contact-us')}
               className="bg-[#7AD3FB] px-[20px] py-[12px] rounded cursor-pointer text-[#292C34]">
               Contact us
