@@ -33,7 +33,7 @@ const block5 = () => {
           <p
             className="text-[16px] font-normal font-CreatoDisplay leading-[24px] sm:text-[23px] sm:leading-[32px] md:text-[16px] md:leading-[24px] lg:text-[25px] lg:leading-[38px] xl:text-[16px] xl:leading-[24px] xl:font-light 2xl:text-[21px] 2xl:leading-[32px] text-[#DED1CE]"
           >
-            Share the flavors and experiences of Double Four with friends and loved ones. Our Gift Cards are available as physical cards and can be purchased directly in-store. Perfect for any occasion — ask our team for details during your next visit.
+            Share the flavors and experiences of Double Four with friends and loved ones. Our Gift Cards are available as physical cards and can be purchased directly in-store.Perfect for any occasion — ask our team for details during your next visit.
           </p>
 
             <h2
