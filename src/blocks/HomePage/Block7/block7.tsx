@@ -49,11 +49,11 @@ const block7 = () => {
                 </div>
 
                 {/* Hours list */}
-                <div className="text-left">
+                <div className="text-left flex flex-col gap-[10px]">
                     {hours.map((item, index) => (
                         <div
                             key={index}
-                            className="flex flex-row items-center text-[12px] gap-[10px] leading-[19.2px] text-[#FFFFFF] sm:text-[24px]"
+                            className="flex flex-row items-center text-[16px] gap-[10px] leading-[19.2px] text-[#FFFFFF] sm:text-[24px]"
                         >
                             {/* Day */}
                             <span className="whitespace-nowrap">{item.day}:</span>
@@ -62,7 +62,7 @@ const block7 = () => {
                             <span className="flex-1 border-b border-[#D5D5D54D] mx-2 my-3 sm:my-[25px]"></span>
 
                             {/* Time */}
-                            <span className="whitespace-nowrap font-medium">{item.time}</span>
+                            <span className="whitespace-nowrap font-normal">{item.time}</span>
                         </div>
                     ))}
                 </div>

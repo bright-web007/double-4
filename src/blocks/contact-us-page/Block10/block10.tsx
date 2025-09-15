@@ -26,7 +26,7 @@ const block10 = () => {
                             Contact Us
                         </span>
 
-                        <span className="text-[18px] leading-[100%] font-normal font-CreatoDisplay text-[#FFFFFF] sm:text-[32px] md:text-[20px] lg:text-[30px] xl:text-[18px] xl:leading-[150%]">
+                        <span className="text-[18px] leading-[150%] font-normal font-CreatoDisplay text-[#FFFFFF] sm:text-[32px] md:text-[20px] lg:text-[30px] xl:text-[18px] xl:leading-[150%]">
                             Let’s connect and make your Double Four experience seamless. Whether it’s an inquiry, or special request, we’re ready to assist you.
                         </span>
                     </h1>

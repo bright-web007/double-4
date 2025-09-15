@@ -10,7 +10,7 @@ const block5 = () => {
           alt='Decorative coffee'
           width={350}
           height={350}
-          className=" absolute left-[245px] xl:left-[-18%] top-[-240.4px] xl:top-[-260.4px] h-[350px] w-[350px] sm:left-[420px] sm:top-[-225.4px] md:left-[72%] md:top-[-225.4px] lg:left-[78%]"
+          className=" absolute left-[245px] xl:rotate-75 xl:h-[280px] xl:w-[280px] xl:left-[-15%] top-[-240.4px] xl:top-[-170.4px] h-[350px] w-[350px] sm:left-[420px] sm:top-[-225.4px] md:left-[72%] md:top-[-225.4px] lg:left-[78%]"
         />
 
 
@@ -37,7 +37,7 @@ const block5 = () => {
           </p>
 
             <h2
-              className="text-[12px] font-semibold font-Archivo uppercase leading-[100%] tracking-[2.8%] sm:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[16px] 2xl:text-[16px] text-[#7AD3FB]"
+              className="text-[16px] font-semibold font-Archivo leading-[100%] tracking-[2.8%] sm:text-[16px] md:text-[16px] lg:text-[18px] xl:text-[16px] 2xl:text-[16px] text-[#7AD3FB]"
             >
               Ask in - store today!
             </h2>

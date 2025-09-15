@@ -207,7 +207,7 @@ const Block11 = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-400 hover:bg-blue-500 text-[#3A2B28] py-[12px] rounded-[4px] text-[16px] leading-[21px] font-CreatoDisplay font-normal transition-colors sm:text-[25px] sm:leading-[31px] sm:py-[18px] md:text-[16px] md:leading-[21px] md:p-[12px] lg:text-[25px] lg:leading-[31px] lg:py-[18px] xl:text-[16px] xl:leading-[21px] xl:p-[12px]"
+            className="w-full bg-[#7AD3FB] hover:bg-blue-500 text-[#3A2B28] rounded-[4px] text-[16px] leading-[21px] font-CreatoDisplay font-normal transition-colors sm:text-[25px] sm:leading-[31px] md:text-[16px] md:leading-[21px]  lg:text-[25px] lg:leading-[31px] xl:text-[16px] xl:leading-[21px]  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           >
             Submit
           </button>

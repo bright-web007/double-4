@@ -28,7 +28,7 @@ const Footer = () => {
           height={28.87}
           className="w-[295.99px] h-[28.87px] object-contain sm:w-[330.99px] sm:h-[38.87px] md:w-[295.99px] md:h-[28.87px] lg:h-[38.87px] lg:w-[330.99px] xl:h-[28.87px] xl:w-[295.99px]"
         />
-        <div className="text-[10.34px] leading-[100%] font-light font-Archivo sm:text-[16px] md:text-[10.34px] lg:text-[16px] xl:text-[10.34px] xl:leading-[21px] ">
+        <div className="text-[10.34px] leading-[100%] font-normal font-Archivo sm:text-[16px] md:text-[10.34px] lg:text-[16px] xl:text-[10.34px] xl:leading-[21px] ">
           <p>CAFE</p>
         </div>
       </div>
@@ -46,11 +46,11 @@ const Footer = () => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="Your Email Here"
-            className="text-[14px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400 sm:text-[18px] sm:px-[16px] sm:py-[20px] md:px-[16px] md:py-[12px] lg:px-[16px] lg:py-[20px] xl:px-[16px] xl:py-[12px] 2xl:px-[16px] 2xl:py-[20px] h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
+            className="text-[14px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           />
           <button
             onClick={handleClick}
-            className="bg-[#7AD3FB] w-full text-[#3A2B28] text-[16px] leading-[21px] font-CreatoDisplay font-normal rounded-[4px] hover:bg-blue-600 transition sm:text-[18px]  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
+            className="bg-[#7AD3FB] w-full text-[#3A2B28] text-[16px] leading-[21px] font-CreatoDisplay font-normal rounded-[4px] transition sm:text-[18px]  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           >
             Join
           </button>
@@ -102,7 +102,7 @@ const Footer = () => {
       <hr className="border-[#564542] h-[3px]" />
 
       <div>
-        <div className="flex flex-col w-full gap-[16px] text-[16px] leading-[21px] font-normal cursor-pointer text-[#DED1CE] whitespace-nowrap sm:text-[25px] sm:gap-[27px] md:gap-[16px] md:text-[16px] md:leading-[21px] lg:text-[25px] lg:gap-[27px] lg:leading-[21px] xl:text-[16px] xl:leading-[21px] xl:gap-[16px] xl:grid xl:grid-cols-4">
+        <div className="flex flex-col w-full gap-[16px] text-[16px] leading-[21px] font-normal cursor-pointer text-[#DED1CE] whitespace-nowrap sm:text-[25px] sm:gap-[27px] md:gap-[16px] md:text-[16px] md:leading-[21px] lg:text-[25px] lg:gap-[27px] lg:leading-[21px] xl:text-[16px] xl:leading-[21px] xl:gap-[16px] xl:flex-row xl:justify-between">
           {navLinks.map(item => (
             <React.Fragment key={item.name}>
               <a

@@ -39,7 +39,7 @@ const block1 = () => {
           <span className="text-white">Good Food, Great </span>
           <span className="text-[#7AD3FB] italic font-normal">Coffee</span>
         </h1>
-        <p className="text-[15px] leading-[21px] font-normal text-white font-CreatoDisplay sm:text-[23px] sm:leading-[30px] lg:text-[27px] lg:leading-[31px] xl:px-[21%] xl:text-[20px] 2xl:text-[18px]">
+        <p className="text-[18px] leading-[21px] font-normal text-white font-CreatoDisplay sm:text-[23px] sm:leading-[30px] lg:text-[27px] lg:leading-[31px] xl:px-[21%] xl:text-[20px] 2xl:text-[18px]">
           Experience exceptional coffee and thoughtfully prepared meals in a calm, welcoming space.
         </p>
       </div>
