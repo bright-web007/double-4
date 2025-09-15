@@ -33,6 +33,8 @@ const Footer = () => {
         </div>
       </div>
 
+      <hr className="border-[#564542] h-[3px]" />
+
       <div className="flex flex-col gap-[24px] w-full xl:w-[489px]">
         <p className="text-[16px] font-CreatoDisplay text-[#DED1CE] leading-[21px] font-normal sm:text-[24px] sm:leading-[28px] md:text-[15px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[16px] xl:leading-[21px] ">
           Subscribe to our newsletter for the latest updates on features and releases.
@@ -100,7 +102,7 @@ const Footer = () => {
       <hr className="border-[#564542] h-[3px]" />
 
       <div>
-        <div className="flex flex-col w-full gap-[16px] text-[16px] leading-[21px] font-normal cursor-pointer text-[#DED1CE] whitespace-nowrap sm:text-[25px] sm:gap-[27px] md:gap-[16px] md:text-[16px] md:leading-[21px] lg:text-[25px] lg:gap-[27px] lg:leading-[21px] xl:text-[16px] xl:leading-[21px] xl:gap-[16px] xl:grid xl:grid-cols-6">
+        <div className="flex flex-col w-full gap-[16px] text-[16px] leading-[21px] font-normal cursor-pointer text-[#DED1CE] whitespace-nowrap sm:text-[25px] sm:gap-[27px] md:gap-[16px] md:text-[16px] md:leading-[21px] lg:text-[25px] lg:gap-[27px] lg:leading-[21px] xl:text-[16px] xl:leading-[21px] xl:gap-[16px] xl:grid xl:grid-cols-4">
           {navLinks.map(item => (
             <React.Fragment key={item.name}>
               <a

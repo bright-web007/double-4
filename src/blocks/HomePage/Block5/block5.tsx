@@ -1,86 +1,70 @@
-'use client';
-import React from "react";
+import React from 'react'
 import Image from "next/image";
-import { RewardLayer } from "@/helpers/data";
-import { Button } from "@/components/ui/button";
 
 const block5 = () => {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2">
-      {RewardLayer.map((item, index) => (
-        <div
-          key={index}
-          className={`relative flex flex-col gap-4 px-[16px] py-[50px] sm:px-[20px]  md:py-[100px] md:px-[171px] lg:py-[150px] lg:px-[250px] xl:py-[100px] xl:px-[100px] 2xl:py-[80px] 2xl:px-[120px]
-          ${index === 0 ? "bg-[#3A2B28]" : "bg-[#DED1CE]"} overflow-hidden`}
-        >
-          {/* Decorative Image - Different for each container */}
-          <Image
-            src={index === 0 ? "https://double-4.s3.eu-north-1.amazonaws.com/coffeebeans.webp" : "https://double-4.s3.eu-north-1.amazonaws.com/coffeebeans2.webp"}
-            alt="Decorative bean"
-            width={index === 0 ? 350 : 100}
-            height={index === 0 ? 350 : 100}
-            className={`absolute  ${index === 0 ? "left-[245px] top-[-240.4px] h-[350px] w-[350px] sm:left-[420px] sm:top-[-225.4px] md:left-[72%] md:top-[-225.4px] lg:left-[78%] xl:left-[70%]" 
-              : "left-[-58px] top-[-50.4px] h-[100px] w-[100px] md:left-[-40px] md:top-[-40.4px]"}`}
-          />
+    <div className="bg-[#3A2B28] flex flex-col xl:flex-row">
+      <div className="relative w-full  overflow-hidden px-[16px] pt-[71px] pb-[20px] md:px-[142px] md:pt-[86px] xl:px-[96px] xl:pt-[151px]">
+        <Image
+          src='https://double-4.s3.eu-north-1.amazonaws.com/coffeebeans.webp'
+          alt='Decorative coffee'
+          width={350}
+          height={350}
+          className=" absolute left-[245px] xl:left-[-18%] top-[-240.4px] xl:top-[-260.4px] h-[350px] w-[350px] sm:left-[420px] sm:top-[-225.4px] md:left-[72%] md:top-[-225.4px] lg:left-[78%]"
+        />
 
-          <div className="flex flex-col gap-[16px]">
-            {/* Title */}
+
+        <div className="flex flex-col gap-[16px]">
+          {/* Title */}
+          <h2
+            className="text-[12px] font-semibold font-Archivo uppercase leading-[100%] tracking-[2.8%] sm:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[14px] 2xl:text-[16px] text-[#7AD3FB]"
+          >
+            A Perfect Gift, Anytime
+          </h2>
+
+          {/* Subtitle */}
+          <p
+            className="text-[36px] font-light font-Archivo uppercase leading-[120%] sm:text-[55px] md:text-[36px] lg:text-[48px] xl:text-[36px] 2xl:text-[43px] text-[#FFFFFF]"
+          >
+            GIVE THE GIFT OF DOUBLE FOUR
+          </p>
+
+          {/* Description */}
+          <p
+            className="text-[16px] font-normal font-CreatoDisplay leading-[24px] sm:text-[23px] sm:leading-[32px] md:text-[16px] md:leading-[24px] lg:text-[25px] lg:leading-[38px] xl:text-[16px] xl:leading-[24px] xl:font-light 2xl:text-[21px] 2xl:leading-[32px] text-[#DED1CE]"
+          >
+            Share the flavors and experiences of Double Four with friends and loved ones. Our Gift Cards are available as physical cards and can be purchased directly in-store. Perfect for any occasion — ask our team for details during your next visit.
+          </p>
+
             <h2
-              className={`text-[12px] font-semibold font-Archivo uppercase leading-[100%] tracking-[2,8%] sm:text-[16px] md:text-[14px] lg:text-[16px] xl:text-[14px] 2xl:text-[16px] ${
-                index === 0 ? "text-[#7AD3FB]" : "text-[#3A2B28]"
-              }`}
+              className="text-[12px] font-semibold font-Archivo uppercase leading-[100%] tracking-[2.8%] sm:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[16px] 2xl:text-[16px] text-[#7AD3FB]"
             >
-              {item.title}
+              Ask in - store today!
             </h2>
-
-            {/* Subtitle */}
-            <p
-              className={`text-[36px] font-light font-Archivo uppercase leading-[120%] sm:text-[55px] md:text-[36px] lg:text-[43px] xl:text-[42px] 2xl:text-[43px]  ${
-                index === 0 ? "text-[#FFFFFF]" : "text-[#3A2B28]"
-              }`}
-            >
-              {item.subtitle}
-            </p>
-
-            {/* Description */}
-            <p
-              className={`text-[16px] font-normal font-CreatoDisplay leading-[24px] sm:text-[23px] sm:leading-[32px] md:text-[14px] md:leading-[24px] lg:text-[23px] lg:leading-[32px] xl:text-[14px] xl:leading-[24px] xl:font-light 2xl:text-[23px] 2xl:leading-[32px] ${
-                index === 0 ? "text-[#DED1CE]" : "text-[#3A2B28]"
-              }`}
-            >
-              {item.desc}
-            </p>
-          </div>
-
-          <div className="place-items-center">
-            {/* Main Image */}
-            <Image
-              src={item.img}
-              alt={item.title}
-              height={190}
-              width={290}
-              className="object-contain w-full"
-            />
-
-            {/* Button */}
-            {item.buttons?.map((btn, i) => (
-              <Button
-                key={i}
-                onClick={() => {
-                  if (btn.actionType === "navigate" && btn.path) {
-                    window.location.href = btn.path;
-                  }
-                }}
-                className="bg-[#7AD3FB] w-full font-Archivo leading-[100%] h-[50px] text-[16px] sm:text-[20px] sm:h-[65px] md:text-[16px] md:h-[50px] lg:text-[19px] lg:h-[60px] xl:text-[16px] xl:h-[50px]"
-              >
-                {btn.label}
-              </Button>
-            ))}
-          </div>
         </div>
-      ))}
-    </div>
-  );
-};
+      </div>
 
-export default block5;
+
+          <div className="w-full">
+            <div className="relative w-full h-[437px] overflow-hidden sm:h-[700px]">
+              <Image
+                src="https://double-4.s3.eu-north-1.amazonaws.com/giftSecImage.webp"
+                alt="Decorative coffee"
+                fill
+                className="object-cover"
+              />
+
+              {/* Gradient overlay */}
+              <div
+                className="absolute pointer-events-none w-full h-[300px] top-[-15px] left-0 bg-gradient-to-b from-[#3A2B28]/2000 to-transparent blur-[8px]  xl:blur-[-20px] xl:w-[100px] md:h-full xl:top-0 xl:left-[-5px] xl:bg-gradient-to-r xl:from-[#3A2B28]/2000 xl:to-transparent"
+              />
+            </div>
+          </div>
+
+
+
+    </div >
+  )
+}
+
+export default block5
