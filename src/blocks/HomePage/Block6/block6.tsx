@@ -29,7 +29,7 @@ const block6 = () => {
                     </div>
                 ))}
             </div>
-            <p className="text-[16px] leading-[100%] font-CreatoDisplay font-medium text-[#3A2B28] sm:text-[24px] md:text-[16px] lg:text-[24px] xl:text-[16px]">
+            <p className="text-[16px] leading-[100%] font-CreatoDisplay font-normal text-[#3A2B28] sm:text-[24px] md:text-[16px] lg:text-[24px] xl:text-[16px]">
                 View full gallery
                 </p>
             </div>
