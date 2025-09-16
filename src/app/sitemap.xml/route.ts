@@ -10,11 +10,11 @@ export async function GET() {
 
   const routes = [
     { url: "/", priority: 1.0 },
-    { url: "/about", priority: 0.9 },
-    { url: "/services", priority: 0.8 },
-    { url: "/menu", priority: 0.8 },
-    { url: "/gallery", priority: 0.8 },
-    { url: "/contact-us", priority: 0.5 },
+    { url: "/about", priority: 1.0 },
+    { url: "/services", priority: 1.0 },
+    { url: "/menu", priority: 1.0 },
+    { url: "/gallery", priority: 1.0 },
+    { url: "/contact-us", priority: 1.0 },
   ]
 
   const lastmod = new Date().toISOString().split("T")[0]
