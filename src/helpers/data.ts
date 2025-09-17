@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { env } from '../lib/env'
 
   export const items = [
     {
@@ -133,7 +134,7 @@ export type Button = {
 
   export const Meta_Tags = {
     siteName: 'Double 4',
-    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://double-4.wazobia.uk/',
+    siteUrl: env.NEXT_PUBLIC_SITE_URL || 'https://double-4.wazobia.uk/',
     description:
       ' Experience exceptional coffee and thoughtfully prepared meals in a calm, welcoming space.',
   };
