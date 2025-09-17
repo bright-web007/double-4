@@ -5,12 +5,11 @@ import { Icon } from '@iconify/react';
 import { navLinks } from '@/helpers/data';
 import { useMutation } from "@apollo/client/react";
 import { CREATE_RESPONSE } from "@/lib/mutations";
+import { env } from '../../lib/env';
+import { toast } from 'sonner';
 
 
 
-type FormData = {
-  email: string;
-};
 
 // Mutation response type
 type CreateResponseData = {
@@ -36,24 +35,31 @@ const Footer = () => {
     try {
       const { data } = await createResponse({
         variables: {
-          form_uuid: process.env.NEXT_PUBLIC_FOOTER_FORM_UUID,
-          response: { [process.env.NEXT_PUBLIC_FOOTER_RESPONSE_FIELD_ID as string]: value }
+          form_uuid: env.NEXT_PUBLIC_FOOTER_FORM_UUID,
+          response: { [env.NEXT_PUBLIC_FOOTER_RESPONSE_FIELD_ID as string]: value }
         },
       });
 
       if (data?.createResponse) {
-        alert("✅ " + data.createResponse.submission_text);
+        toast.success("✅ " + data.createResponse.submission_text);
         setStatus("success");
         setValue(""); // reset input
       } else {
-        alert("⚠️ Something went wrong. Please try again.");
+        toast.error("⚠️ Something went wrong. Please try again.");
         setStatus("error");
       }
-    } catch (err: any) {
-      console.error("❌ Apollo error:", err);
-      setStatus("error");
-      alert("❌ Submission failed: " + (err.message || "Network error"));
+    } catch (err) { // no type annotation here
+      if (err instanceof Error) {
+        console.error("❌ Apollo error:", err);
+        setStatus("error");
+        toast.error("❌ Submission failed: " + err.message);
+      } else {
+        console.error("❌ Unknown error:", err);
+        setStatus("error");
+        toast.error("❌ Submission failed: Unknown error");
+      }
     }
+
   };
 
   return (

@@ -1,9 +1,10 @@
 // lib/apolloClient.ts
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import { env } from './env';
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: process.env.NEXT_PUBLIC_GRAPHQL_URI,
+    uri: env.NEXT_PUBLIC_GRAPHQL_URI,
     headers: {
       "Content-Type": "application/json",
     },

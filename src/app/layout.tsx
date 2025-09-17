@@ -4,6 +4,8 @@ import "./globals.css";
 import { AppProvider } from "@/context/Appcontext";
 import LayoutWrapper from "@/components/LayoutWrapper/LayoutWrapper";
 import ApolloWrapper from "./providers/ApolloWrapper";
+import { Toaster} from "sonner";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +41,7 @@ export default function RootLayout({
           <AppProvider>
             <div className="min-h-screen flex flex-col">
               <LayoutWrapper>{children}</LayoutWrapper>
+              <Toaster richColors />
             </div>
           </AppProvider>
         </ApolloWrapper>

@@ -1,9 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Icon } from "@iconify/react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@apollo/client/react";
 import { CREATE_RESPONSE } from "@/lib/mutations";
+import { env } from '../../../lib/env';
+import { toast } from "sonner";
+
 
 type FormData = {
   firstName: string;
@@ -17,34 +20,35 @@ type FormData = {
 
 const Block11 = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
-  const [createResponse, { loading, error, data }] = useMutation(CREATE_RESPONSE);
+  const [createResponse, { loading}] = useMutation(CREATE_RESPONSE);
 
   const onSubmit = async (formData: FormData) => {
     try {
       const variables = {
-        form_uuid: process.env.NEXT_PUBLIC_FORM_UUID,
+        form_uuid: env.NEXT_PUBLIC_FORM_UUID,
         response: {
-          [process.env.NEXT_PUBLIC_FIRST_NAME_ID!]: formData.firstName,
-          [process.env.NEXT_PUBLIC_LAST_NAME_ID!]: formData.lastName,
-          [process.env.NEXT_PUBLIC_EMAIL_ID!]: formData.email,
-          [process.env.NEXT_PUBLIC_PHONE_ID!]: formData.phone,
-          [process.env.NEXT_PUBLIC_SUBJECT_ID!]: formData.subject,
-          [process.env.NEXT_PUBLIC_MESSAGE_ID!]: formData.message,
-          [process.env.NEXT_PUBLIC_TERMS_ID!]: formData.terms,
+          [env.NEXT_PUBLIC_FIRST_NAME_ID!]: formData.firstName,
+          [env.NEXT_PUBLIC_LAST_NAME_ID!]: formData.lastName,
+          [env.NEXT_PUBLIC_EMAIL_ID!]: formData.email,
+          [env.NEXT_PUBLIC_PHONE_ID!]: formData.phone,
+          [env.NEXT_PUBLIC_SUBJECT_ID!]: formData.subject,
+          [env.NEXT_PUBLIC_MESSAGE_ID!]: formData.message,
+          [env.NEXT_PUBLIC_TERMS_ID_KEY]: formData.terms,
+
         },
       };
 
       const res = await createResponse({ variables });
 
       if (res.data) {
-        alert("✅ Form submitted successfully!");
+        toast.success("✅ Form submitted successfully! Your response has been recorded.");
         reset(); // clear form only on success
       } else {
-        alert("⚠️ Something went wrong. Please try again.");
+        toast.error("⚠️ Something went wrong. Please try again.");
       }
     } catch (err) {
       console.error("❌ Submission error:", err);
-      alert("❌ Submission failed. Please try again later.");
+      toast.error("❌ Submission failed. Please try again later.");
     }
   };
 
