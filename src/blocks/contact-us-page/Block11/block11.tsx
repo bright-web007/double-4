@@ -2,6 +2,11 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useForm } from "react-hook-form";
+import { useMutation } from "@apollo/client/react";
+import { CREATE_RESPONSE } from "@/lib/mutations";
+import { env } from '../../../lib/env';
+import { toast } from "sonner";
+
 
 type FormData = {
   firstName: string;
@@ -14,14 +19,37 @@ type FormData = {
 };
 
 const Block11 = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+  const [createResponse, { loading}] = useMutation(CREATE_RESPONSE);
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (formData: FormData) => {
+    try {
+      const variables = {
+        form_uuid: env.NEXT_PUBLIC_FORM_UUID,
+        response: {
+          [env.NEXT_PUBLIC_FIRST_NAME_ID!]: formData.firstName,
+          [env.NEXT_PUBLIC_LAST_NAME_ID!]: formData.lastName,
+          [env.NEXT_PUBLIC_EMAIL_ID!]: formData.email,
+          [env.NEXT_PUBLIC_PHONE_ID!]: formData.phone,
+          [env.NEXT_PUBLIC_SUBJECT_ID!]: formData.subject,
+          [env.NEXT_PUBLIC_MESSAGE_ID!]: formData.message,
+          [env.NEXT_PUBLIC_TERMS_ID_KEY]: formData.terms,
+
+        },
+      };
+
+      const res = await createResponse({ variables });
+
+      if (res.data) {
+        toast.success("✅ Form submitted successfully! Your response has been recorded.");
+        reset(); // clear form only on success
+      } else {
+        toast.error("⚠️ Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("❌ Submission error:", err);
+      toast.error("❌ Submission failed. Please try again later.");
+    }
   };
 
   return (
@@ -103,7 +131,7 @@ const Block11 = () => {
                 type="text"
                 placeholder="Enter first name"
                 {...register("firstName", { required: "This field is required" })}
-                className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px] lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
+                className="w-full border border-[#D2D2D2] text-[#646464] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px] lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.firstName && (
                 <span className="text-red-500 text-sm">{errors.firstName.message}</span>
@@ -119,7 +147,7 @@ const Block11 = () => {
                 type="text"
                 placeholder="Last name"
                 {...register("lastName", { required: "This field is required" })}
-                className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
+                className="w-full border border-[#D2D2D2] text-[#646464] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.lastName && (
                 <span className="text-red-500 text-sm">{errors.lastName.message}</span>
@@ -135,7 +163,7 @@ const Block11 = () => {
                 type="email"
                 placeholder="Enter email address"
                 {...register("email", { required: "This field is required" })}
-                className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
+                className="w-full border border-[#D2D2D2] text-[#646464] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.email && (
                 <span className="text-red-500 text-sm">{errors.email.message}</span>
@@ -151,7 +179,7 @@ const Block11 = () => {
                 type="tel"
                 placeholder="Enter phone number"
                 {...register("phone", { required: "This field is required" })}
-                className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
+                className="w-full border border-[#D2D2D2] text-[#646464] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
               />
               {errors.phone && (
                 <span className="text-red-500 text-sm">{errors.phone.message}</span>
@@ -168,7 +196,7 @@ const Block11 = () => {
               type="text"
               placeholder="What’s this about?"
               {...register("subject", { required: "This field is required" })}
-              className="w-full border border-[#D2D2D2] text-[#D2D2D2] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
+              className="w-full border border-[#D2D2D2] text-[#646464] p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px]"
             />
             {errors.subject && (
               <span className="text-red-500 text-sm">{errors.subject.message}</span>
@@ -184,7 +212,7 @@ const Block11 = () => {
               placeholder="Tell us how we can help"
               rows={4}
               {...register("message", { required: "This field is required" })}
-              className="w-full h-[180px]  border border-[#D2D2D2] text-[#D2D2D2]  p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none resize-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px] md:h-[180px] xl:h-[209px]"
+              className="w-full h-[180px]  border border-[#D2D2D2] text-[#646464]  p-[12px] text-[14px] leading-[21px] font-normal font-Archivo rounded-[8px] focus:border-blue-400 focus:ring focus:ring-blue-200 outline-none resize-none sm:p-[18px] sm:text-[20px] sm:leading-[27px] md:p-[12px] md:text-[14px] md:leading-[21px]  lg:p-[18px] lg:text-[20px] lg:leading-[27px] xl:p-[12px] xl:text-[14px] xl:leading-[21px] md:h-[180px] xl:h-[209px]"
             />
             {errors.message && (
               <span className="text-red-500 text-sm">{errors.message.message}</span>
@@ -206,7 +234,7 @@ const Block11 = () => {
 
           {/* Submit Button */}
           <button
-            type="submit"
+            type="submit" disabled={loading}
             className="w-full bg-[#7AD3FB] hover:bg-blue-500 text-[#3A2B28] rounded-[4px] text-[16px] leading-[21px] font-CreatoDisplay font-normal transition-colors sm:text-[25px] sm:leading-[31px] md:text-[16px] md:leading-[21px]  lg:text-[25px] lg:leading-[31px] xl:text-[16px] xl:leading-[21px]  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           >
             Submit

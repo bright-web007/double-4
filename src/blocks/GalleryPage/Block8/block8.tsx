@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const block8 = () => {
     return (
-        <div className="relative h-[100vh] overflow-hidden mt-[-80px] pt-[40px] pb-[80px] px-[16px] sm:pb-[120px] sm:pt-[70px] sm:px-[20px] md:pb-[114px] md:pt-[115px] md:px-[114px] lg:px-[130px] xl:pb-[114px] xl:pt-[115px] xl:px-[114px] 2xl:px-[145px]">
+        <div className="relative h-[80vh] overflow-hidden mt-[-80px] pt-[40px] pb-[80px] px-[16px] sm:pb-[120px] sm:pt-[70px] sm:px-[20px] md:pb-[114px] md:pt-[115px] md:px-[114px] lg:px-[130px] xl:pb-[114px] xl:pt-[115px] xl:px-[114px] 2xl:px-[145px]">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image

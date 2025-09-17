@@ -130,3 +130,10 @@ export type Button = {
     { name: 'Gallery', link: '/gallery' },
     { name: 'Contact-us', link: '/contact-us' },
   ];
+
+  export const Meta_Tags = {
+    siteName: 'Double 4',
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://double-4.wazobia.uk/',
+    description:
+      ' Experience exceptional coffee and thoughtfully prepared meals in a calm, welcoming space.',
+  };

@@ -3,12 +3,63 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import { navLinks } from '@/helpers/data';
+import { useMutation } from "@apollo/client/react";
+import { CREATE_RESPONSE } from "@/lib/mutations";
+import { env } from '../../lib/env';
+import { toast } from 'sonner';
 
+
+
+
+// Mutation response type
+type CreateResponseData = {
+  createResponse: {
+    submission_text: string;
+  };
+};
 const Footer = () => {
   const [value, setValue] = useState('');
+  const [status, setStatus] = useState<null | "loading" | "success" | "error">(null);
 
-  const handleClick = () => {
-    alert(`You entered: ${value}`);
+  const [createResponse] = useMutation<CreateResponseData>(CREATE_RESPONSE);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!value) {
+      alert("Please enter your email");
+      return;
+    }
+
+    setStatus("loading");
+
+    try {
+      const { data } = await createResponse({
+        variables: {
+          form_uuid: env.NEXT_PUBLIC_FOOTER_FORM_UUID,
+          response: { [env.NEXT_PUBLIC_FOOTER_RESPONSE_FIELD_ID as string]: value }
+        },
+      });
+
+      if (data?.createResponse) {
+        toast.success("✅ " + data.createResponse.submission_text);
+        setStatus("success");
+        setValue(""); // reset input
+      } else {
+        toast.error("⚠️ Something went wrong. Please try again.");
+        setStatus("error");
+      }
+    } catch (err) { // no type annotation here
+      if (err instanceof Error) {
+        console.error("❌ Apollo error:", err);
+        setStatus("error");
+        toast.error("❌ Submission failed: " + err.message);
+      } else {
+        console.error("❌ Unknown error:", err);
+        setStatus("error");
+        toast.error("❌ Submission failed: Unknown error");
+      }
+    }
+
   };
 
   return (
@@ -36,25 +87,27 @@ const Footer = () => {
       <hr className="border-[#564542] h-[3px]" />
 
       <div className="flex flex-col gap-[24px] w-full xl:w-[489px]">
-        <p className="text-[16px] font-CreatoDisplay text-[#DED1CE] leading-[21px] font-normal sm:text-[24px] sm:leading-[28px] md:text-[15px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[16px] xl:leading-[21px] ">
+        <p className="text-[16px] font-CreatoDisplay text-[#DED1CE] leading-[21px] font-normal sm:text-[24px] sm:leading-[28px] md:text-[15px] md:leading-[26px] lg:text-[20px] lg:leading-[28px] xl:text-[18px] xl:leading-[21px] ">
           Subscribe to our newsletter for the latest updates on features and releases.
         </p>
 
-        <div className="flex flex-col items-center gap-[16px]">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-[16px]">
           <input
-            type="text"
+            type="email"
+            name="email"
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder="Your Email Here"
-            className="text-[14px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
+            className="text-[14px] p-[12px] leading-[100%] font-CreatoDisplay font-normal border-[0.5px] border-[#DED1CE] text-[#FFFFFF99] rounded-[4px] w-full focus:outline-none focus:ring-2 focus:ring-blue-400  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           />
           <button
-            onClick={handleClick}
+            // onClick={handleClick}
+            type="submit" disabled={status === "loading"}
             className="bg-[#7AD3FB] w-full text-[#3A2B28] text-[16px] leading-[21px] font-CreatoDisplay font-normal rounded-[4px] transition sm:text-[18px]  h-[50px] sm:h-[70px] lg:h-[80px] xl:h-[50px]"
           >
             Join
           </button>
-        </div>
+        </form>
 
         <div>
           <p className="text-[#D2D2D2] text-[12px] leading-[21px] font-CreatoDisplay font-normal sm:text-[18px] sm:leading-[24px] md:text-[12px] md:leading-[21px] lg:text-[18px] lg:leading-[24px] xl:text-[12px] xl:leading-[21px] ">
@@ -136,4 +189,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
