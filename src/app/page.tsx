@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   title: `Home | ${Meta_Tags.siteName}`,
   description: `${Meta_Tags.description}`,
   metadataBase: new URL(`${Meta_Tags.siteUrl}`),
+  robots: {
+    index: false, // hide from Google
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   openGraph: {
     title: `Home | ${Meta_Tags.siteName}`,
     description: `${Meta_Tags.description}`,
@@ -32,13 +40,13 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <Block1/>
-      <Block2/>
-      <Block3/>
-      <Block4/>
-      <Block5/>
-      <Block6/>
-      <Block7/>
+      <Block1 />
+      <Block2 />
+      <Block3 />
+      <Block4 />
+      <Block5 />
+      <Block6 />
+      <Block7 />
     </div>
   )
 }
